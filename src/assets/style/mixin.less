@@ -1,0 +1,38 @@
+@import "./variables";
+
+// background-image
+.bgImgMixin(@s: contain) {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: @s;
+}
+
+
+// multi-line text vertical center
+.mutiTextEllipsis (@num) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: @num;
+  -webkit-box-orient: vertical;
+}
+
+
+// flex layout
+.flexbox(@dire: row, @wp: nowrap, @jc: space-center, @align: center) {
+  display: flex;
+  flex-direction: @dire;
+  flex-wrap: @wp;
+  justify-content: @jc;
+  align-items: @align;
+}
+
+// right arrow
+.rightArrow(@color: inherit, @size: 10px) {
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: @size solid transparent;
+  border-right: (@size + 4) solid @color;
+  border-bottom: @size solid transparent;
+}

@@ -1,0 +1,375 @@
+@import "./mixin";
+
+// 页面高度
+.page {
+  min-height: calc(100% - 120px);
+
+}
+
+// 页面有padding
+.is-content {
+  padding: 30px;
+}
+
+.el-button--text {
+  padding: 5px 0 !important;
+}
+
+.el-tabs__content {
+  overflow: visible !important;
+}
+
+//.el-button--default {
+//  color: #268EF9 !important;
+//  border-color: #268EF9 !important;
+//  background-color: #fff !important;
+//}
+//
+//.el-button--default:focus {
+//  color: #333 !important;
+//  border-color: #dcdfe6 !important;
+//  background-color: #fff !important;
+//}
+
+// table
+.el-table {
+  color: #333 !important;
+
+  .good-detail {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding: 6px 0 6px 20px;
+
+    .img {
+      .bgImgMixin(@s: 100% 100%);
+      width: 50px;
+      height: 50px;
+      background-color: #fff;
+    }
+
+    .desc {
+      padding-left: 10px;
+      width: 145px;
+      text-align: left;
+      .mutiTextEllipsis(2);
+    }
+  }
+}
+
+// 面包屑
+.page-breadcrumb {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f5f5f5;
+
+  .el-breadcrumb__item {
+    font-size: 12px;
+
+    > .is-link {
+      color: #999;
+      font-weight: normal;
+    }
+  }
+}
+
+// 自定义header
+.table-header-cell {
+  background-color: #f5f5f5 !important;
+  color: #999;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: none !important;
+  padding: 0 !important;
+}
+
+// 搜索栏
+.search {
+  padding: 20px 30px 0 30px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+// search-input-item
+.input-item {
+  .flexbox;
+  float: left;
+  padding-right: 20px;
+  padding-bottom: 20px;
+
+  .label {
+    height: 32px;
+    line-height: 32px;
+    min-width: 70px;
+    padding: 0 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #e1e1e1;
+    border-right: none;
+  }
+}
+
+// table
+.table-content {
+  padding: 20px 30px;
+  // 表格里的序号
+  .sort-number {
+    display: inline-block;
+    border: 1px solid #e1e1e1;
+    width: 50px;
+    height: 30px;
+    line-height: 28px;
+    text-align: center;
+  }
+}
+
+.toolbar {
+  padding: 5px 0 20px 0;
+
+  .icon-daochu {
+    color: #ccc;
+  }
+
+  .el-button:hover {
+    .icon-daochu {
+      color: #fa6207;
+    }
+  }
+
+  .pagecout {
+    > span {
+      padding-right: 13px;
+      color: #424242;
+    }
+  }
+}
+
+.paging {
+  padding-top: 20px;
+
+  .confirm-btn {
+    display: inline-block;
+    margin-left: 4px;
+    padding: 0 8px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    cursor: pointer;
+  }
+
+  .total {
+    line-height: 28px;
+    padding-right: 20px;
+    color: #999;
+  }
+}
+
+// el-form
+.el-form {
+  .img-item {
+    display: flex;
+    align-items: center;
+
+    .el-form-item__content {
+      margin-left: 0 !important;
+    }
+  }
+
+  //.el-form-item {
+  //  margin-bottom: 22px !important;
+  //
+  //  .el-form-item__content {
+  //    font-size: 12px !important;
+  //
+  //    .el-form-item__error {
+  //      padding-top: 4px;
+  //    }
+  //  }
+  //
+  //  .el-form-item__label {
+  //    font-size: 12px;
+  //  }
+  //
+  //  &:last-child {
+  //    margin-bottom: 0 !important;
+  //  }
+  //}
+
+  &.label-pading {
+    .el-form-item__label {
+      padding-right: 30px !important;
+    }
+  }
+}
+
+// el-dropdown-menu
+.el-dropdown-menu {
+  .el-dropdown-menu__item {
+    &:not(.is-disabled):hover, &:focus {
+      .icon {
+        color: #fb8139;
+      }
+    }
+
+    .icon {
+      font-size: 14px;
+      color: #ccc;
+      padding-right: 6px;
+    }
+  }
+}
+
+// el-dialog
+.el-dialog {
+  .el-dialog__header {
+    height: 43px;
+    line-height: 46px;
+    padding: 0 18px !important;
+    border-bottom: 1px solid #e6e6e6;
+
+    .el-dialog__headerbtn {
+      top: 12px;
+
+      .el-dialog__close {
+        font-weight: 600 !important;
+      }
+    }
+  }
+
+  .el-dialog__body {
+    padding: 25px 18px 20px 18px;
+  }
+}
+
+.dialog-footer {
+  display: flex;
+  padding-top: 30px;
+  justify-content: center;
+  align-items: center;
+
+  .el-button {
+    margin-right: 5px;
+  }
+}
+
+// el-select-dropdown__wrap
+//.el-select-dropdown__wrap {
+//  .el-select-dropdown__item {
+//    font-size: 12px !important;
+//  }
+//}
+
+//// tabs
+.el-tabs {
+  .el-tabs__content {
+    //font-size: 12px !important;
+
+    .edui-default {
+      position: relative;
+      z-index: 10;
+    }
+  }
+}
+
+
+// pc端富文本编辑器
+.w-e-toolbar {
+  border-bottom: none !important;
+  border-top: none !important;
+  border-color: #e4e7ed !important;
+  height: 30px !important;
+  line-height: 24px !important;
+  z-index: 88 !important;
+}
+
+.w-e-text-container {
+  border-color: #e4e7ed !important;
+  height: 415px !important;
+  z-index: 88 !important;
+}
+
+.w-e-menu {
+  z-index: 99 !important;
+}
+
+
+// 商品编辑里特殊tabs
+.good-detail-tabs {
+  .el-tabs__header.is-top {
+    margin: 0 !important;
+    border-bottom: 1px solid #e4e7ed !important;
+
+    .el-tabs__nav.is-top {
+      .el-tabs__item.is-top {
+        &.is-active {
+          border-left: 1px solid #e4e7ed;
+          border-right: 1px solid #e4e7ed;
+          border-top: 1px solid #e4e7ed;
+          background-color: rgb(245, 245, 245);
+          border-bottom-color: rgb(245, 245, 245) !important;
+        }
+      }
+    }
+  }
+}
+
+.daochu {
+  .iconfont {
+    color: #999;
+    font-size: 12px;
+  }
+
+  &:hover {
+    .iconfont {
+      color: @active-color;
+    }
+  }
+
+  &:focus {
+    .iconfont {
+      color: @active-color !important;
+    }
+  }
+}
+
+.list-goods-wraper {
+  .flexbox( @jc: flex-start, @align: center);
+
+  .goods-img {
+    flex: 1 0 35px;
+    width: 45px;
+    height: 45px;
+    margin-right: 5px;
+    .bgImgMixin;
+  }
+}
+
+.picker-input {
+  width: 240px !important;
+}
+
+.el-color-picker__trigger {
+  box-shadow: 1px 1px 1px #eee;
+}
+
+.delay-tips {
+  margin: 25px 0 5px;
+}
+
+.mx-datepicker-range {
+  width: 210px !important;
+
+  .mx-input {
+    height: 32px !important;
+    border-radius: 0 !important;
+    border-color: #e1e1e1 !important;
+    box-shadow: none !important;
+  }
+
+  .cell.actived {
+    background-color: @active-color !important;
+  }
+
+  .mx-datepicker-btn-confirm:hover {
+    color: @active-color !important;
+    border-color: @active-color !important;
+  }
+}

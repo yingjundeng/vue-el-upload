@@ -1,0 +1,128 @@
+@import "./mixin";
+
+@order-active-color: #20ba5e;
+
+.vertical-box {
+  margin: 24px 0;
+  padding: 24px 0;
+  min-height: 130px;
+  border: 1px solid @border-color;
+  color: @color-gray;
+  .flexbox(@dire: row, @jc: flex-start, @align: center);
+  .box-l {
+    width: 200px;
+    height: 100%;
+    padding-left: 30px;
+    border-right: 1px solid @border-color;
+    .flexbox(@dire: column, @jc: center, @align: left);
+    span {
+      color: @color-black;
+      margin: 3px 0 15px;
+    }
+    li {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .box-r {
+    flex: 1;
+    height: 100%;
+    padding-left: 60px;
+    .flexbox(@dire: row, @jc: flex-start, @align: center);
+    > div {
+      width: 100%;
+    }
+  }
+}
+
+.order-steps {
+  width: 90%;
+  max-width: 1000px;
+  .el-step__head {
+    .el-step__icon {
+      box-sizing: borde-box;
+      width: 12px;
+      height: 12px;
+      border: 3px solid #e1e1e1;
+      position: relative;
+      top: 4px;
+      i {
+        display: none;
+      }
+      .el-step__icon-inner {
+        display: none;
+      }
+    }
+    .el-step__line {
+      // width: 145px;
+      background: #e1e1e1;
+    }
+  }
+
+  .el-step__head.is-success {
+    color: #20ba5e;
+    border-color: @order-active-color;
+    .el-step__icon {
+      border: 3px solid @order-active-color;
+    }
+  }
+
+  .el-step__main {
+    .el-step__title {
+      font-size: 12px;
+      color: #b5b5b5;
+      &.is-success {
+        color: @color-black;
+      }
+    }
+    .el-step__description {
+      line-height: 1.4em;
+      color: #b5b5b5;
+      &.is-success {
+        color: #b5b5b5;
+      }
+    }
+  }
+  &.is-vertical .el-step__line {
+    width: 2px;
+    top: 10px;
+    bottom: -10px;
+    left: 5px;
+  }
+  .el-step.is-vertical {
+    .el-step__line {
+      width: 2px;
+      top: 10px;
+      bottom: -10px;
+      left: 5px;
+    }
+    .el-step__head.is-success {
+      color: #20ba5e;
+      border-color: @color-primary;
+      .el-step__icon {
+        border: 3px solid @color-primary;
+      }
+    }
+    .el-step__main {
+      display: flex;
+      width: 100%;
+      .el-step__title {
+        flex: 0 0 200px;
+        .timeStamp {
+          margin-left: 20px;
+        }
+      }
+      .el-step__description {
+        padding-right: 0;
+        flex: 1;
+        color: @color-black;
+        width: 300px;
+        position: relative;
+        top: 9px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
